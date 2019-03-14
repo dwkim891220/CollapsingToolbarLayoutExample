@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom_home"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/icon_bottom_home_gray"
+        android:title="홈" />
+    <item
+        android:id="@+id/bottom_favorite"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/icon_bottom_heart_gray"
+        android:title="관심" />
+    <item
+        android:id="@+id/bottom_map"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/icon_bottom_map_gray"
+        android:title="지도" />
+    <item
+        android:id="@+id/bottom_4"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/icon_bottom_startup_gray"
+        android:title="창업센터" />
+    <item
+        android:id="@+id/bottom_more"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/icon_bottom_more_gray"
+        android:title="더보기" />
+</menu>
