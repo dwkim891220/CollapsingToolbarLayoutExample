@@ -57,7 +57,7 @@ class ScrollingActivity : AppCompatActivity(), ActivityListener {
                     true
                 }
                 R.id.bottom_4 -> {
-                    replaceFragment(MapFragment.TAG)
+                    replaceFragment(StartupFragment.TAG)
                     true
                 }
                 R.id.bottom_more -> {
@@ -75,6 +75,7 @@ class ScrollingActivity : AppCompatActivity(), ActivityListener {
         val fragment = when(tag){
             HomeFragment.TAG -> HomeFragment.newInstance()
             MapFragment.TAG -> MapFragment.newInstance()
+            StartupFragment.TAG -> StartupFragment.newInstance()
             else -> return
         }
 

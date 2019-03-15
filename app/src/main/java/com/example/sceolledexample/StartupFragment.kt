@@ -7,14 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class MapFragment : Fragment() {
+class StartupFragment : Fragment() {
     private var listener: ActivityListener? = null
 
     companion object {
-        val TAG = MapFragment::class.java.simpleName
+        val TAG = StartupFragment::class.java.simpleName
 
-        fun newInstance(): MapFragment {
-            return MapFragment().apply {
+        fun newInstance(): StartupFragment {
+            return StartupFragment().apply {
                 arguments = Bundle()
             }
         }
@@ -26,7 +26,7 @@ class MapFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_map, container, false)
+        return inflater.inflate(R.layout.fragment_startup, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

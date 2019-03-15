@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 class HomeFragment : Fragment() {
-    var listener: ActivityListener? = null
+    private var listener: ActivityListener? = null
 
     companion object {
         val TAG = HomeFragment::class.java.simpleName
