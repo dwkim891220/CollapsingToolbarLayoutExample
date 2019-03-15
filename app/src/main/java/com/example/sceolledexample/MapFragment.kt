@@ -31,6 +31,9 @@ class MapFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        listener?.toolbarExpand(false)
+        listener?.run {
+            toolbarExpand(false)
+            enbleAppbarBehavior(false)
+        }
     }
 }

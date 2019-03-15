@@ -31,6 +31,9 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        listener?.toolbarExpand(true)
+        listener?.run {
+            toolbarExpand(true)
+            enbleAppbarBehavior(true)
+        }
     }
 }

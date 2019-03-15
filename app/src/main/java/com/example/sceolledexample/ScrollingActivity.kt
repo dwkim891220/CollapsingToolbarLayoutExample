@@ -3,6 +3,7 @@ package com.example.sceolledexample
 import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.AppBarLayout
+import android.support.design.widget.CoordinatorLayout
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_scrolling.*
 
@@ -91,8 +92,13 @@ class ScrollingActivity : AppCompatActivity(), ActivityListener {
     override fun toolbarExpand(need: Boolean) {
         appBar.setExpanded(need, false)
     }
+
+    override fun enbleAppbarBehavior(enable: Boolean) {
+        ((appBar.layoutParams as? CoordinatorLayout.LayoutParams)?.behavior as? DisableableAppBarLayoutBehavior)?.mEnabled = enable
+    }
 }
 
 interface ActivityListener{
     fun toolbarExpand(need: Boolean)
+    fun enbleAppbarBehavior(enable: Boolean)
 }
