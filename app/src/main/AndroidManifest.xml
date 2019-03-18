@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ScrollingActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.TransparentTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

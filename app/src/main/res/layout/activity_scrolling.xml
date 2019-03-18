@@ -4,23 +4,24 @@
                                                  xmlns:tools="http://schemas.android.com/tools"
                                                  android:layout_width="match_parent"
                                                  android:layout_height="match_parent"
+                                                 android:background="@android:color/background_light"
+                                                 android:fitsSystemWindows="true"
                                                  tools:context=".ScrollingActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:fitsSystemWindows="true">
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapseBar"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="wrap_content"
             android:background="#ff9922"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:contentScrim="@android:color/white"
-            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:contentScrim="?attr/colorPrimary"
             android:fitsSystemWindows="true">
 
             <ImageView
@@ -28,13 +29,13 @@
                 android:layout_height="300dp"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"
+                android:fitsSystemWindows="true"
                 android:src="@drawable/img_rolling_safe"/>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:layout_collapseMode="pin">
 
             </android.support.v7.widget.Toolbar>
