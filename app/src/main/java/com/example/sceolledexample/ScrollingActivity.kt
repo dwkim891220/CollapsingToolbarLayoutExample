@@ -4,8 +4,13 @@ import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.AppBarLayout
 import android.support.design.widget.CoordinatorLayout
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
+import android.view.Gravity
+import android.view.ViewGroup
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_scrolling.*
+import kotlinx.android.synthetic.main.layout_custom_toolbar.view.*
 
 class ScrollingActivity : AppCompatActivity(), ActivityListener {
 
@@ -22,18 +27,30 @@ class ScrollingActivity : AppCompatActivity(), ActivityListener {
 
     private fun setToolbar(){
         setSupportActionBar(toolbar)
+        collapseBar.title = "TThis iis TTitle"
+
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        supportActionBar?.setDisplayShowCustomEnabled(true)
+
+        var viewToolbar = layoutInflater.inflate(R.layout.layout_custom_toolbar, null)
+        supportActionBar?.setCustomView(viewToolbar, ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.CENTER))
+
         appBar.addOnOffsetChangedListener(
             object : AppBarStateChangeListener(){
                 override fun onStateChanged(appBarLayout: AppBarLayout, state: State) {
                     when(state){
                         State.Expanded -> {
-                            fl_tb.setBackgroundColor(Color.TRANSPARENT)
-                            iv_tb_back.setImageResource(R.drawable.icon_navi_back_w)
+                            viewToolbar.iv_navi.isEnabled = true
+                            Toast.makeText(this@ScrollingActivity, "expanded", Toast.LENGTH_SHORT).show()
+                            //fl_tb.setBackgroundColor(Color.TRANSPARENT)
+                            //iv_tb_back.setImageResource(R.drawable.icon_navi_back_w)
                         }
                         State.Collapsed -> {
-                            fl_tb.setBackgroundColor(Color.WHITE)
-                            iv_tb_back.setImageResource(R.drawable.icon_navi_back)
+                            viewToolbar.iv_navi.isEnabled = false
+                            Toast.makeText(this@ScrollingActivity, "collapsed", Toast.LENGTH_SHORT).show()
+                            //fl_tb.setBackgroundColor(Color.WHITE)
+                            //iv_tb_back.setImageResource(R.drawable.icon_navi_back)
                         }
                         else -> return
                     }
