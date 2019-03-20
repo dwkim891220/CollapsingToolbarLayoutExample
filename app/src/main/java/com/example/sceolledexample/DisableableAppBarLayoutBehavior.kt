@@ -6,6 +6,9 @@ import android.support.design.widget.CoordinatorLayout
 import android.util.AttributeSet
 import android.view.View
 
+/**
+ * 
+ */
 class DisableableAppBarLayoutBehavior @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null
