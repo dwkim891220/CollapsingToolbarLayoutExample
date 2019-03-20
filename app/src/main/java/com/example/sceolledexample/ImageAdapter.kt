@@ -23,7 +23,7 @@ class ImageAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     holder.itemView.iv_image.setImageResource(R.drawable.img_rolling_safe)
                 } else {
                     holder.itemView.iv_image.setImageResource(R.drawable.icon_test)
-                    holder.itemView.iv_image.scaleType = ImageView.ScaleType.CENTER_CROP
+                    holder.itemView.iv_image.scaleType = ImageView.ScaleType.FIT_CENTER
                 }
 
             }
